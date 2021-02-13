@@ -2,7 +2,7 @@
 
 "adventurer-box.png":
 {
-	"frame": {"x":0,"y":0,"w":23,"h":37},
+	"frame": {"x":16,"y":0,"w":23,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":37},
@@ -10,7 +10,7 @@
 },
 "adventurer-idle-00.png":
 {
-	"frame": {"x":23,"y":0,"w":50,"h":37},
+	"frame": {"x":39,"y":0,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -18,7 +18,7 @@
 },
 "adventurer-idle-01.png":
 {
-	"frame": {"x":73,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":37,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -26,7 +26,7 @@
 },
 "adventurer-idle-02.png":
 {
-	"frame": {"x":123,"y":0,"w":50,"h":37},
+	"frame": {"x":50,"y":37,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -34,7 +34,7 @@
 },
 "adventurer-idle-left-00.png":
 {
-	"frame": {"x":173,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":74,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -42,7 +42,7 @@
 },
 "adventurer-idle-left-01.png":
 {
-	"frame": {"x":223,"y":0,"w":50,"h":37},
+	"frame": {"x":50,"y":74,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -50,7 +50,7 @@
 },
 "adventurer-idle-left-02.png":
 {
-	"frame": {"x":273,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":111,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -58,7 +58,7 @@
 },
 "adventurer-run-00.png":
 {
-	"frame": {"x":323,"y":0,"w":50,"h":37},
+	"frame": {"x":50,"y":111,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -66,7 +66,7 @@
 },
 "adventurer-run-01.png":
 {
-	"frame": {"x":373,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":148,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -74,7 +74,7 @@
 },
 "adventurer-run-02.png":
 {
-	"frame": {"x":423,"y":0,"w":50,"h":37},
+	"frame": {"x":50,"y":148,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -82,7 +82,7 @@
 },
 "adventurer-run-03.png":
 {
-	"frame": {"x":473,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":185,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -90,7 +90,7 @@
 },
 "adventurer-run-04.png":
 {
-	"frame": {"x":523,"y":0,"w":50,"h":37},
+	"frame": {"x":50,"y":185,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -98,7 +98,7 @@
 },
 "adventurer-run-05.png":
 {
-	"frame": {"x":573,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":222,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -106,7 +106,7 @@
 },
 "adventurer-run-left-00.png":
 {
-	"frame": {"x":623,"y":0,"w":50,"h":37},
+	"frame": {"x":50,"y":222,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -114,7 +114,7 @@
 },
 "adventurer-run-left-01.png":
 {
-	"frame": {"x":673,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":259,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -122,7 +122,7 @@
 },
 "adventurer-run-left-02.png":
 {
-	"frame": {"x":723,"y":0,"w":50,"h":37},
+	"frame": {"x":50,"y":259,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -130,7 +130,7 @@
 },
 "adventurer-run-left-03.png":
 {
-	"frame": {"x":773,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":296,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -138,7 +138,7 @@
 },
 "adventurer-run-left-04.png":
 {
-	"frame": {"x":823,"y":0,"w":50,"h":37},
+	"frame": {"x":50,"y":296,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
@@ -146,15 +146,23 @@
 },
 "adventurer-run-left-05.png":
 {
-	"frame": {"x":873,"y":0,"w":50,"h":37},
+	"frame": {"x":0,"y":333,"w":50,"h":37},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":37},
 	"sourceSize": {"w":50,"h":37}
 },
+"Gilgamesh.gif":
+{
+	"frame": {"x":0,"y":370,"w":100,"h":116},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":116},
+	"sourceSize": {"w":100,"h":116}
+},
 "green.png":
 {
-	"frame": {"x":923,"y":0,"w":16,"h":15},
+	"frame": {"x":0,"y":0,"w":16,"h":15},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":15},
@@ -171,8 +179,8 @@
 	"version": "1.0",
 	"image": "sprites.png",
 	"format": "RGBA8888",
-	"size": {"w":939,"h":37},
+	"size": {"w":100,"h":486},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:564162b2b98b65deb007c88e031109c8:2b6d80469e4d08d8b4f72e1887e72e60:1eabdf11f75e3a4fe3147baf7b5be24b$"
+	"smartupdate": "$TexturePacker:SmartUpdate:95ea0e3e4a3e043830529090dc3e266e:720fb3e4b97275e00ddeb3bd033b0a0c:1eabdf11f75e3a4fe3147baf7b5be24b$"
 }
 }

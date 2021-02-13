@@ -1,5 +1,4 @@
 import AbstractObject from './abstractObject';
-import SpriteUtils from '../utils/spriteUtils';
 
 export default class Character extends AbstractObject {
 	animated = true;
@@ -10,10 +9,6 @@ export default class Character extends AbstractObject {
 		super._init();
 		this._sprite.animationSpeed = 0.1;
 		this._sprite.x = 10;
-	}
-
-	_initSpriteWrapper(){
-		super._initSpriteWrapper();
 	}
 
 	handleKeyboardEvent(pKeys: any) {
