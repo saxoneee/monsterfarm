@@ -53,9 +53,8 @@ export default class AbstractObject extends AbstractView{
 	}
 
 	setPosition(pX:number, pY:number){
-
-		this._sprite.x = pX;
-		this._sprite.y = pY;
+		this._spriteWrap.x = pX;
+		this._spriteWrap.y = pY;
 	}
 
 	tick(){

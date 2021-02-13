@@ -52,16 +52,16 @@ export default class Character extends AbstractObject {
 	move(pDirection: any) {
 		switch (pDirection) {
 			case 'up':
-				this._spriteWrap.y += -1;
+				this._spriteWrap.y += -2;
 				break;
 			case 'down':
-				this._spriteWrap.y += 1;
+				this._spriteWrap.y += 2;
 				break;
 			case 'left':
-				this._spriteWrap.x += -1;
+				this._spriteWrap.x += -2;
 				break;
 			case 'right':
-				this._spriteWrap.x += 1;
+				this._spriteWrap.x += 2;
 				break;
 		}
 

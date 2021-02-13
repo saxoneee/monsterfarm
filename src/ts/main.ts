@@ -25,8 +25,14 @@ const container = currentLevel.init(app.view.width, app.view.height);
 app.stage.addChild(container);
 app.ticker.add(delta => gameLoop(delta));
 
+var x = 0;
 function gameLoop(delta:number){
-	currentLevel.handleKeyboardEvents(keyboard);
+	x++;
+	if(x > 1){ // too much on every tick
+		currentLevel.handleKeyboardEvents(keyboard);
+		x = 0;
+	}
+
 	currentLevel.tick();
 }
 

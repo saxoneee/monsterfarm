@@ -35,12 +35,12 @@ export default class Level1Controller extends AbstractLevelController{
 
 		_chara.on('move', function(){
 			_map.contain(_chara.get());
-
+			console.log(_me.collision(_chara.get()));
 		});
 
-		this.addToContainer(_map);
-		this.addToContainer(_chara);
-		this.addToContainer(_monster);
+		this.addToLevel(_map);
+		this.addToLevel(_chara);
+		this.addToLevel(_monster);
 
 		_monster.setPosition(200,200);
 	}
