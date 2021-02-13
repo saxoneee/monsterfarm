@@ -18,7 +18,9 @@ export default class AbstractLevelController {
 
 		this._items.push(pObject);
 
-		_container.addChild(pObject.get());
+		var _sprite = pObject.get();
+
+		_container.addChild(_sprite);
 	}
 
 	registerForKeyboardEvents(pObject:any){

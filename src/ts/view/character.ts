@@ -4,17 +4,16 @@ import SpriteUtils from '../utils/spriteUtils';
 export default class Character extends AbstractObject {
 	animated = true;
 	textureName = 'adventurer-idle';
+	textureHitbox = 'adventurer-box.png';
 
 	_init() {
 		super._init();
 		this._sprite.animationSpeed = 0.1;
-		this._sprite.anchor.x = 0.5
+		this._sprite.x = 10;
 	}
 
-	get() {
-		const _char = super.get();
-		_char.play();
-		return _char;
+	_initSpriteWrapper(){
+		super._initSpriteWrapper();
 	}
 
 	handleKeyboardEvent(pKeys: any) {
@@ -58,17 +57,19 @@ export default class Character extends AbstractObject {
 	move(pDirection: any) {
 		switch (pDirection) {
 			case 'up':
-				this._sprite.y += -1;
+				this._spriteWrap.y += -1;
 				break;
 			case 'down':
-				this._sprite.y += 1;
+				this._spriteWrap.y += 1;
 				break;
 			case 'left':
-				this._sprite.x += -1;
+				this._spriteWrap.x += -1;
 				break;
 			case 'right':
-				this._sprite.x += 1;
+				this._spriteWrap.x += 1;
 				break;
 		}
+
+		this.fireEvent('move', this);
 	}
 }
