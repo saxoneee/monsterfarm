@@ -37,11 +37,6 @@ export default class Level1Controller extends AbstractLevelController{
 
 		this.registerForKeyboardEvents(_chara);
 
-		_chara.on('move', function(){
-			_map.contain(_chara.get());
-			console.log(_me.collision(_chara.get()));
-		});
-
 		this.addToLevel(_map);
 		this.addToLevel(_chara);
 		this.addToLevel(_monster);
@@ -49,5 +44,21 @@ export default class Level1Controller extends AbstractLevelController{
 
 		_wall.setPosition(0,40);
 		_monster.setPosition(200,200);
+
+		_chara.on('move', function(pNewPos:any, pDirection:string){
+			const _charaSprite = _chara.get(),
+				  _charaCoords = {
+				x: _charaSprite.x + pNewPos.x,
+				y: _charaSprite.y + pNewPos.y,
+				width: _charaSprite.width,
+				height: _charaSprite.height,
+			},
+				_mapCollision = _map.contain(_charaCoords),
+				_objectCollision = _me.collision(_charaCoords);
+
+			if(!_mapCollision && !_objectCollision){
+				_chara.setPosition(_charaCoords.x, _charaCoords.y);
+			}
+		});
 	}
 }

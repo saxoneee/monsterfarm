@@ -28,14 +28,14 @@ export default class AbstractLevelController {
 			_co = false;
 		for(var _i = 0; _i < this._items.length; _i++){
 			var _item = this._items[_i];
-			if(_item.isFoe && _item.isFoe() === true){
+			if(_item.isWall && _item.isWall() === true){
 				var _sprite = _item.get();
 
-				if(pChar.x >= _sprite.x && pChar.x <= _sprite.x + _sprite.width){
+				if(pChar.x > _sprite.x && pChar.x < _sprite.x + _sprite.width){
 					_h = true;
 				}
 
-				if(_h && pChar.y >= _sprite.y && pChar.y <= _sprite.y + _sprite.height){
+				if(_h && pChar.y > _sprite.y && pChar.y < _sprite.y + _sprite.height){
 					_co = true;
 					break;
 				}

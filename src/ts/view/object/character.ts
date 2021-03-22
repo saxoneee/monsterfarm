@@ -49,22 +49,35 @@ export default class Character extends AbstractObject {
 		}
 	}
 
+	isWall(){
+		return false;
+	}
+
 	move(pDirection: any) {
+		const _coordsToMove:any = {
+			x:0,
+			y:0
+		};
+
 		switch (pDirection) {
 			case 'up':
-				this._spriteWrap.y += -2;
+				// this._spriteWrap.y += -2;
+				_coordsToMove.y = -2;
 				break;
 			case 'down':
-				this._spriteWrap.y += 2;
+				// this._spriteWrap.y += 2;
+				_coordsToMove.y = 2;
 				break;
 			case 'left':
-				this._spriteWrap.x += -2;
+				// this._spriteWrap.x += -2;
+				_coordsToMove.x = -2;
 				break;
 			case 'right':
-				this._spriteWrap.x += 2;
+				// this._spriteWrap.x += 2;
+				_coordsToMove.x = 2;
 				break;
 		}
 
-		this.fireEvent('move', this);
+		this.fireEvent('move', _coordsToMove, pDirection);
 	}
 }
