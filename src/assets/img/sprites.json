@@ -167,6 +167,14 @@
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":15},
 	"sourceSize": {"w":16,"h":15}
+},
+"wall.png":
+{
+	"frame": {"x":50,"y":333,"w":23,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":37},
+	"sourceSize": {"w":23,"h":37}
 }},
 "animations": {
 	"adventurer-idle": ["adventurer-idle-00.png","adventurer-idle-01.png","adventurer-idle-02.png"],
@@ -181,6 +189,6 @@
 	"format": "RGBA8888",
 	"size": {"w":100,"h":486},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:95ea0e3e4a3e043830529090dc3e266e:720fb3e4b97275e00ddeb3bd033b0a0c:1eabdf11f75e3a4fe3147baf7b5be24b$"
+	"smartupdate": "$TexturePacker:SmartUpdate:8a49a5d05993dd883c4a571630f821d3:34484e4c79284ed998576e358b818b01:1eabdf11f75e3a4fe3147baf7b5be24b$"
 }
 }

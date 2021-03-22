@@ -5,6 +5,8 @@ export default class AbstractMap{
 	_sprite:any;
 	_initialized:boolean = false;
 
+	spriteType:string = 'default';
+
 	textureName:string = null;
 	currentTextureName:string = null;
 	animated:boolean = false;
@@ -18,8 +20,15 @@ export default class AbstractMap{
 	}
 
 	_loadSprite(pName:any){
-		const _texture = SpriteUtils.getTextureByName(pName);
-		return new PIXI.Sprite(_texture);
+		switch(this.spriteType){
+			case 'default':
+				return new PIXI.Sprite(SpriteUtils.getTextureByName(pName));
+			case 'tiling':
+				return new PIXI.TilingSprite(SpriteUtils.getTextureByName(pName));
+			case 'animated':
+				return new PIXI.AnimatedSprite(SpriteUtils.getAnimatedTextureByName(pName));
+		}
+
 	}
 
 	get(){

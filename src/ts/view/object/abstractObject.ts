@@ -8,6 +8,8 @@ export default class AbstractObject extends AbstractView{
 
 	textureHitbox: any = null;
 
+	spriteType = 'animated';
+
 	_init(){
 		super._init();
 
@@ -39,22 +41,20 @@ export default class AbstractObject extends AbstractView{
 		}
 	}
 
-	_loadSprite(pName:any){
-		let _texture = null;
-		if(this.animated){
-			_texture = SpriteUtils.getAnimatedTextureByName(pName);
-
-			return new PIXI.AnimatedSprite(_texture);
-		}else{
-			_texture = SpriteUtils.getTextureByName(pName);
-
-			return new PIXI.Sprite(_texture);
-		}
+	isWall(){
+		return true;
 	}
 
 	setPosition(pX:number, pY:number){
 		this._spriteWrap.x = pX;
 		this._spriteWrap.y = pY;
+	}
+
+	getPosition(){
+		return {
+			x: this._spriteWrap.x,
+			y: this._spriteWrap.y
+		}
 	}
 
 	tick(){

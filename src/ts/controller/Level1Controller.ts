@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 
 import Character from './../view/object/character';
 import Monster from './../view/object/monster';
+import Wall from './../view/object/wall';
 import FirstMap from './../view/FirstMap';
 
 import AbstractLevelController from './AbstractLevelController';
@@ -29,6 +30,9 @@ export default class Level1Controller extends AbstractLevelController{
 		_map.height = _me.height;
 		const _chara = new Character();
 		const _monster = new Monster();
+		const _wall = new Wall();
+		_wall.width = 100;
+		_wall.height = 20;
 
 
 		this.registerForKeyboardEvents(_chara);
@@ -41,7 +45,9 @@ export default class Level1Controller extends AbstractLevelController{
 		this.addToLevel(_map);
 		this.addToLevel(_chara);
 		this.addToLevel(_monster);
+		this.addToLevel(_wall);
 
+		_wall.setPosition(0,40);
 		_monster.setPosition(200,200);
 	}
 }
