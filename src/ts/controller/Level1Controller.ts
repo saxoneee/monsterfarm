@@ -28,6 +28,7 @@ export default class Level1Controller extends AbstractLevelController{
 		const _map = new FirstMap();
 		_map.width = _me.width;
 		_map.height = _me.height;
+		// debugger;
 		const _chara = new Character();
 		const _monster = new Monster();
 		const _wall = new Wall();
@@ -39,26 +40,26 @@ export default class Level1Controller extends AbstractLevelController{
 
 		this.addToLevel(_map);
 		this.addToLevel(_chara);
-		this.addToLevel(_monster);
-		this.addToLevel(_wall);
+		// this.addToLevel(_monster);
+		// this.addToLevel(_wall);
 
-		_wall.setPosition(0,40);
-		_monster.setPosition(200,200);
+		// _wall.setPosition(40,40,0,0);
+		// _monster.setPosition(200,200,200,200);
 
 		_chara.on('move', function(pNewPos:any, pDirection:string){
-			const _charaSprite = _chara.get(),
-				  _charaCoords = {
-				x: _charaSprite.x + pNewPos.x,
-				y: _charaSprite.y + pNewPos.y,
-				width: _charaSprite.width,
-				height: _charaSprite.height,
-			},
-				_mapCollision = _map.contain(_charaCoords),
-				_objectCollision = _me.collision(_charaCoords);
-
-			if(!_mapCollision && !_objectCollision){
-				_chara.setPosition(_charaCoords.x, _charaCoords.y);
-			}
+			const _charaPosition = _chara.getPosition(),
+				_charaHitbox = _chara.getHitbox();
+			let _charaNewX = pNewPos.x,
+				_charaNewY = pNewPos.y,
+				_charaCoords = {
+					x: _charaNewX,
+					y: _charaNewY,
+					width: _charaHitbox.right - _charaHitbox.left,
+					height: _charaHitbox.bottom - _charaHitbox.top,
+				},
+				_coordsInMap = _map.contain(_chara, pNewPos);
+console.log(pNewPos, _coordsInMap);
+			_chara.setPosition(_coordsInMap.x, _coordsInMap.y);
 		});
 	}
 }

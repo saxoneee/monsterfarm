@@ -21,34 +21,39 @@ export default class AbstractMap extends AbstractView{
 	 *
 	 * @param pObject movable Object
 	 */
-	contain(pObject:any) {
-		let _collision = undefined;
+	contain(pObject:any, pDesiredPos:any) {
+		var _objectView = pObject.get();
+		var _newPos = {
+			x: _objectView.x,
+			y: _objectView.y
+		};
+
+		var _left = pObject.x;
 
 		//Left
-		if (pObject.x < 0) {
-			pObject.x = 0;
-		  _collision = "left";
+		if (_left < 0) {
+
 		}
 
-		//Top
-		if (pObject.y < 0) {
-			pObject.y = 0;
-		  _collision = "top";
-		}
+		// //Top
+		// if (pObject.y < 0) {
+		// 	// debugger;
+		// 	pObject.y = 0;
+		//   _collision = "top";
+		// }
 
-		//Right
-		if (pObject.x + pObject.width > this.width) {
-			pObject.x = this.width - pObject.width;
-		  _collision = "right";
-		}
+		// //Right
+		// if (pObject.x + pObject.width > this.width) {
+		// 	pObject.x = this.width - pObject.width;
+		//   _collision = "right";
+		// }
 
-		//Bottom
-		if (pObject.y + pObject.height > this.height) {
-			pObject.y = this.height - pObject.height;
-		  _collision = "bottom";
-		}
+		// //Bottom
+		// if (pObject.y + pObject.height > this.height) {
+		// 	pObject.y = this.height - pObject.height;
+		//   _collision = "bottom";
+		// }
 
-		//Return the `_collision` value
-		return _collision;
+		return _newPos;
 	  }
 }

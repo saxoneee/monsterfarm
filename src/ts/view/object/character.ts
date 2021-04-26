@@ -1,9 +1,15 @@
 import AbstractObject from './abstractObject';
+import Hitbox from './../Hitbox';
 
 export default class Character extends AbstractObject {
 	animated = true;
 	textureName = 'adventurer-idle';
-	textureHitbox = 'adventurer-box.png';
+	_showHitbox = true;
+
+	constructor(){
+		super();
+		this._hitbox = new Hitbox(5, 0, 33, 20);
+	}
 
 	_init() {
 		super._init();
@@ -54,27 +60,24 @@ export default class Character extends AbstractObject {
 	}
 
 	move(pDirection: any) {
-		const _coordsToMove:any = {
-			x:0,
-			y:0
-		};
+		const _coordsToMove:any = this.getPosition();
 
 		switch (pDirection) {
 			case 'up':
 				// this._spriteWrap.y += -2;
-				_coordsToMove.y = -2;
+				_coordsToMove.y -= 2;
 				break;
 			case 'down':
 				// this._spriteWrap.y += 2;
-				_coordsToMove.y = 2;
+				_coordsToMove.y += 2;
 				break;
 			case 'left':
 				// this._spriteWrap.x += -2;
-				_coordsToMove.x = -2;
+				_coordsToMove.x -= 2;
 				break;
 			case 'right':
 				// this._spriteWrap.x += 2;
-				_coordsToMove.x = 2;
+				_coordsToMove.x += 2;
 				break;
 		}
 

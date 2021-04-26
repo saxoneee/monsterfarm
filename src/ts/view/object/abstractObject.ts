@@ -6,8 +6,6 @@ import SpriteUtils from '../../utils/spriteUtils';
 export default class AbstractObject extends AbstractView{
 	_spriteWrap: any;
 
-	textureHitbox: any = null;
-
 	spriteType = 'animated';
 
 	_init(){
@@ -19,41 +17,28 @@ export default class AbstractObject extends AbstractView{
 	}
 
 	get(){
-		if(!this._initialized){
-			this._init();
-			this._initSpriteWrapper();
-		}
-
-		return this._spriteWrap;
-	}
-
-	_initSpriteWrapper(){
-		if(this.textureHitbox){
-			this._spriteWrap = new PIXI.Sprite(SpriteUtils.getTextureByName(this.textureHitbox));
-		}else{
-			this._spriteWrap = new PIXI.Container();
-		}
-
-		this._spriteWrap.addChild(this._sprite);
+		const _view = super.get();
 
 		if(this.animated){
-			this._sprite.play();
+			this._sprite.play()
 		}
+
+		return _view;
 	}
 
 	isWall(){
 		return true;
 	}
 
-	setPosition(pX:number, pY:number){
-		this._spriteWrap.x = pX;
-		this._spriteWrap.y = pY;
+	setPosition(pViewX:number, pViewY:number){
+		this._view.x = pViewX;
+		this._view.y = pViewY;
 	}
 
 	getPosition(){
 		return {
-			x: this._spriteWrap.x,
-			y: this._spriteWrap.y
+			x: this._view.x - this._hitbox.left,
+			y: this._view.y - this._hitbox.top
 		}
 	}
 

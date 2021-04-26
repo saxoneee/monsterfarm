@@ -1,7 +1,8 @@
 import * as PIXI from 'pixi.js';
 import SpriteUtils from '../utils/spriteUtils';
 
-export default class AbstractMap{
+export default class AbstractView{
+	_view:any;
 	_sprite:any;
 	_initialized:boolean = false;
 
@@ -13,10 +14,22 @@ export default class AbstractMap{
 
 	_events: any = {};
 
+	_hitbox:any = null;
+	_showHitbox:any = false;
+
+	wall:boolean = false;
+
 	_init(){
+		this._view = new PIXI.Container;
 		this._sprite = this._loadSprite(this.textureName);
 		this.currentTextureName = this.textureName;
 		this._initialized = true;
+
+		this._view.addChild(this._sprite);
+
+		if(this._showHitbox){
+			this._view.addChild(SpriteUtils.getHitboxRectangle(this._hitbox));
+		}
 	}
 
 	_loadSprite(pName:any){
@@ -28,7 +41,15 @@ export default class AbstractMap{
 			case 'animated':
 				return new PIXI.AnimatedSprite(SpriteUtils.getAnimatedTextureByName(pName));
 		}
+	}
 
+	getHitbox(){
+		return {
+			left: this._view.x + this._hitbox.left,
+			top: this._view.y + this._hitbox.top,
+			right: this._view.x + this._hitbox.right,
+			bottom: this._view.y + this._hitbox.bottom
+		};
 	}
 
 	get(){
@@ -36,7 +57,7 @@ export default class AbstractMap{
 			this._init();
 		}
 
-		return this._sprite;
+		return this._view;
 	}
 
 	tick(){
