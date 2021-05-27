@@ -1,86 +1,52 @@
+import * as PIXI from 'pixi.js';
+
 import AbstractObject from './abstractObject';
-import Hitbox from './../Hitbox';
+import SpriteUtils from './../../utils/spriteUtils';
 
 export default class Character extends AbstractObject {
-	animated = true;
-	textureName = 'adventurer-idle';
-	_showHitbox = true;
 
 	constructor(){
 		super();
-		this._hitbox = new Hitbox(5, 0, 33, 20);
+		this.init();
 	}
 
-	_init() {
-		super._init();
-		this._sprite.animationSpeed = 0.1;
-		this._sprite.x = 10;
+	init(){
+		this.container = new PIXI.Container;
+		this.container.x = 0;
+
+		this.setSprite('idle');
 	}
 
-	handleKeyboardEvent(pKeys: any) {
-		let _isMoving:boolean = false,
-			_direction:string = null;
-		if (pKeys.left.isDown) {
-			_direction = 'left';
-			_isMoving = true;
-		}
-		if (pKeys.right.isDown && !_isMoving) {
-			_direction = 'right';
-			_isMoving = true;
-		}
-		if (pKeys.up.isDown && !_isMoving) {
-			_direction = 'up';
-			_isMoving = true;
-		}
-		if (pKeys.down.isDown && !_isMoving) {
-			_direction = 'down';
-			_isMoving = true;
+	setSprite(pSpriteName:string){
+		var _mask = PIXI.Sprite.from(PIXI.Texture.WHITE);
+		this.container.mask = _mask;
+
+		var _spriteName = 'adventurer-idle',
+			_spriteY = 0,
+			_spriteX = 0,
+			_spriteAnimationSpeed = 0.1,
+			_maskWidth = this.container.width,
+			_maskHeight = this.container.height;
+
+		switch(pSpriteName){
+			case 'idle':
+				_spriteY = -5;
+				_spriteX = -14;
+				_maskWidth = 20;
+				_maskHeight = 31;
+			break;
 		}
 
-		if(_direction){
-			this.move(_direction);
-		}
+		var _sprite = new PIXI.AnimatedSprite(SpriteUtils.getAnimatedTextureByName(_spriteName));
+		this.container.addChild(_sprite);
+		this.container.addChild(_mask);
 
-		if(_isMoving){
-			this.textureName = 'adventurer-run';
-		}else{
-			this.textureName = 'adventurer-idle';
-		}
+		_mask.width = _maskWidth;
+		_mask.height = _maskHeight;
 
-		if(_direction === 'left'){
-			this._sprite.scale.x = -1;
-		}
-		if(_direction === 'right'){
-			this._sprite.scale.x = 1;
-		}
-	}
-
-	isWall(){
-		return false;
-	}
-
-	move(pDirection: any) {
-		const _coordsToMove:any = this.getPosition();
-
-		switch (pDirection) {
-			case 'up':
-				// this._spriteWrap.y += -2;
-				_coordsToMove.y -= 2;
-				break;
-			case 'down':
-				// this._spriteWrap.y += 2;
-				_coordsToMove.y += 2;
-				break;
-			case 'left':
-				// this._spriteWrap.x += -2;
-				_coordsToMove.x -= 2;
-				break;
-			case 'right':
-				// this._spriteWrap.x += 2;
-				_coordsToMove.x += 2;
-				break;
-		}
-
-		this.fireEvent('move', _coordsToMove, pDirection);
+		_sprite.animationSpeed = _spriteAnimationSpeed;
+		_sprite.y = _spriteY;
+		_sprite.x = _spriteX;
+		_sprite.play();
 	}
 }
