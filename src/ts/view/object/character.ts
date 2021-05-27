@@ -22,6 +22,14 @@ export default class Character extends AbstractObject {
 		this.setSprite('idle-right');
 	}
 
+	getWidth(){
+		return this.mask.width;
+	}
+
+	getHeight(){
+		return this.mask.height;
+	}
+
 	/**
 	 * set the character sprite
 	 *
@@ -102,6 +110,57 @@ export default class Character extends AbstractObject {
 	 */
 	tick(pKeyboard:object){
 		this.changeSpriteByKeyboard(pKeyboard);
+		this.moveCharacterByKeyboard(pKeyboard);
+	}
+
+	/**
+	 * populate desired new coordinates
+	 *
+	 * @param pKeyboard
+	 * @returns
+	 */
+	moveCharacterByKeyboard(pKeyboard:any){
+		var _direction = null;
+
+		if (pKeyboard.left.isDown) {
+            _direction = 'left';
+        }
+        if (pKeyboard.right.isDown) {
+            _direction = 'right';
+        }
+        if (pKeyboard.up.isDown) {
+            _direction = 'up';
+        }
+        if (pKeyboard.down.isDown) {
+            _direction = 'down';
+        }
+
+		if(!_direction){
+			return;
+		}
+
+		var _newX = this.container.x,
+			_newY = this.container.y;
+
+		switch(_direction){
+			case 'left':
+				_newX += -1;
+			break;
+			case 'right':
+				_newX += 1;
+			break;
+			case 'up':
+				_newY += -1;
+			break;
+			case 'down':
+				_newY += 1;
+			break;
+		}
+
+		this.fireEvent('move', this, {x: _newX, y: _newY});
+
+		// this.container.x = _newX;
+		// this.container.y = _newY;
 	}
 
 	/**

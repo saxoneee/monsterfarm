@@ -13,9 +13,12 @@ export default class Level1Controller extends AbstractLevelController{
 		var _map = new Map(pWidth, pHeight),
 			_character = new Character();
 
-		this.addToLevel(_map);
-		this.addToLevel(_character);
+		this.setMap(_map);
+		this.setCharacter(_character);
+
+		this.initEvents();
 
 		return this.container;
 	}
+
 }
