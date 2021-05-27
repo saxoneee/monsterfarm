@@ -29,14 +29,8 @@ function startGame(){
 	app.stage.addChild(container);
 	app.ticker.add(delta => gameLoop(delta));
 
-	var x = 0;
 	function gameLoop(delta:number){
-		x++;
-		if(x > 1){ // too much on every tick
-			x = 0;
-		}
-
-		currentLevel.tick();
+		currentLevel.tick(keyboard);
 	}
 }
 
