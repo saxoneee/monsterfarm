@@ -7,6 +7,10 @@ export default class AbstractView{
 
 	events: any = {};
 
+	constructor(){
+		this.container = new PIXI.Container;
+	}
+
 	getContainer(){
 		return this.container;
 	}

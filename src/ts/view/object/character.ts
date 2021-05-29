@@ -13,11 +13,6 @@ export default class Character extends AbstractObject {
 
 	constructor(){
 		super();
-		this.init();
-	}
-
-	init(){
-		this.container = new PIXI.Container;
 
 		this.setSprite('idle-right');
 	}

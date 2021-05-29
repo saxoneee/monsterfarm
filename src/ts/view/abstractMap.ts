@@ -11,12 +11,6 @@ export default class AbstractMap extends AbstractView{
 
 		this.mapWidth = pWidth;
 		this.mapHeight = pHeight;
-
-		this.init();
-	}
-
-	init(){
-		this.container = new PIXI.Container;
 	}
 
 	contains(pObject:any, pCoords:any){
