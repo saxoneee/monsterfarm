@@ -1,5 +1,3 @@
-import * as PIXI from 'pixi.js';
-
 import AbstractView from './abstractView';
 
 export default class AbstractMap extends AbstractView{
