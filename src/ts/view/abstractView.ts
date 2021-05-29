@@ -7,7 +7,13 @@ export default class AbstractView{
 
 	events: any = {};
 
+	static idCounter:number = 0;
+	id:String;
+
 	constructor(){
+		this.id = "view" + AbstractView.idCounter;
+		AbstractView.idCounter++;
+
 		this.container = new PIXI.Container;
 	}
 
